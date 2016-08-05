@@ -29,34 +29,34 @@
 2. API&脚手架生成器:hp artisan infyom:api_scaffold Post
 附录
 下面是完整的字段HTML输入类型列表：
-text：htmlType - text
-email：htmlType - email
-number：htmlType - number
-date：htmlType - date
-file：htmlType - file
-password：htmlType - password
-select：htmlType - select：Option 1，Option 2，Option 3
-radio：htmlType - radio：Male，Female
-checkbox：htmlType - checkbox：value
-textarea：htmlType - textarea
+- text：htmlType - text
+- email：htmlType - email
+- number：htmlType - number
+- date：htmlType - date
+- file：htmlType - file
+- password：htmlType - password
+- select：htmlType - select：Option 1，Option 2，Option 3
+- radio：htmlType - radio：Male，Female
+- checkbox：htmlType - checkbox：value
+- textarea：htmlType - textarea
 3. 生成器支持逐个生成对应文件命令：
-迁移生成器
+- 迁移生成器
 php artisan infyom:migration $MODEL_NAME$
-模型生成器
+- 模型生成器
 php artisan infyom:model $MODEL_NAME$
-Repository生成器
+- Repository生成器
 php artisan infyom:repository $MODEL_NAME$
-API控制器生成器
+- API控制器生成器
 php artisan infyom.api:controller $MODEL_NAME$
-API请求生成器
+- API请求生成器
 php artisan infyom.api:requests $MODEL_NAME$
-测试用例生成器
+- 测试用例生成器
 php artisan infyom.api:tests $MODEL_NAME$
-脚手架控制器生成器
+- 脚手架控制器生成器
 php artisan infyom.scaffold:controller $MODEL_NAME$
-脚手架请求生成器
+- 脚手架请求生成器
 php artisan infyom.scaffold:requests $MODEL_NAME$
-视图生成器
+- 视图生成器
 php artisan infyom.scaffold:views $MODEL_NAME$
 
 ###后台开发说明
