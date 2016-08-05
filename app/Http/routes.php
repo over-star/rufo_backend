@@ -1,0 +1,125 @@
+<?php
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+////迭代器执行的时间
+//    function gen_str($n){
+//        $start = microtime(true);
+//        $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+//        $str=null;
+//        $max = strlen($strPol)-1;
+//        function gen_t($n,$strPol,$max){
+//            for($i = 1; $i < $n; $i++)
+//                yield $strPol[rand(0,$max)];
+//        }
+//        foreach(gen_t($n,$strPol,$max) as $out)
+//            $str=$str.$out;
+//
+//        echo $str;
+//        $elapsed = microtime(true) - $start;
+//        echo '  执行时间:'.$elapsed;
+//        echo "memory (byte): ", memory_get_peak_usage(true), "\n";
+//    }
+////普通函数
+//    function getRandChar($length){
+//        $start = microtime(true);
+//        $str = null;
+//        $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+//        $max = strlen($strPol)-1;
+//
+//        for($i=0;$i<$length;$i++){
+//            $str.=$strPol[rand(0,$max)];//rand($min,$max)生成介于min和max两个数之间的一个随机整数
+//        }
+//        echo $str;
+//        $elapsed = microtime(true) - $start;
+//        echo '  2执行时间:'.$elapsed;
+//        echo "memory (byte): ", memory_get_peak_usage(true), "\n";
+//    }
+//
+//    gen_str(30000);//2359296
+//    getRandChar(30000);
+
+Route::get('/a', function () {
+     Log::emergency('测试日志'); 
+});
+Route::get('excel/export','ExcelController@export');
+Route::get('excel/import','ExcelController@import');
+
+/*
+|--------------------------------------------------------------------------
+| API routes
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
+    Route::group(['prefix' => 'v1'], function () {
+        require config('infyom.laravel_generator.path.api_routes');
+    });
+});
+/*
+|--------------------------------------------------------------------------
+| Admin routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('posts', 'PostController');
+// 认证路由...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+// 注册路由...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+Route::get('logs-1',['middleware' => 'auth'],'LogController@logs1');
+Route::get('logs-2', ['middleware' => 'auth', 'uses' => 'LogController@logs2']);
+//用户管理
+Route::group(['prefix' => 'admin', 'namespace' => 'Auth','middleware' =>'auth'], function () {
+    Route::get('index', 'UserController@kzt');
+    //用户管理
+    Route::get('user','UserController@index');
+    Route::post('user', ['as' => 'admin.user', 'uses' => 'UserController@add_user']);
+    Route::get('user/delete/{id}','UserController@user_delete');
+    Route::get('user/edit/{id}','UserController@user_edit');
+    Route::post('user/update', ['as' => 'admin.user.update', 'uses' => 'UserController@update_user']);
+    //角色管理
+    Route::get('role','UserController@role_list');
+    Route::get('role/delete/{id}','UserController@role_delete');
+    Route::post('role', ['as' => 'admin.role', 'uses' => 'UserController@add_role']);
+    Route::get('role/edit/{id}','UserController@role_edit');
+    Route::post('role/update', ['as' => 'admin.role.update', 'uses' => 'UserController@update_role']);
+    
+    //权限管理
+    Route::get('permission','UserController@permission_list');
+    Route::get('permission/delete/{id}','UserController@permission_delete');
+    Route::get('permission/edit/{id}','UserController@permission_edit');
+    Route::post('permission', ['as' => 'admin.permission', 'uses' => 'UserController@add_permission']);
+    Route::post('permission/update', ['as' => 'admin.permission.update', 'uses' => 'UserController@update_permission']);
+    //菜单管理
+    Route::post('menu', ['as' => 'admin.menu', 'uses' => 'UserController@add_menu']);
+    Route::get('menu','UserController@menu_list');
+    Route::get('menu/edit/{id}','UserController@menu_edit');
+    Route::get('menu/delete/{id}','UserController@menu_delete');
+    Route::post('menu/update', ['as' => 'admin.menu.update', 'uses' => 'UserController@update_menu']);
+
+});
+
+Route::get('/',function (){
+    //return redirect('auth/login');
+    TagClass::echowho();
+});
+Route::resource('tags', 'TagController');
+
+//Route::resource('posts', 'PostController');
+
+//Route::resource('articles', 'ArticleController');
+
