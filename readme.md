@@ -1,3 +1,7 @@
+##预览
+![ss](public/1.png)
+![ss](public/2.png)
+
 ##插件使用
 ```
   - composer require laracasts/generators --dev
