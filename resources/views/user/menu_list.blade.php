@@ -67,9 +67,11 @@
                                             <a data-toggle="modal"  data-target="#mmmm" class="btn btn-xs btn-info" href="{{url('admin/menu/edit',['id'=>$v->id])}}">
                                                 <i class="icon-edit bigger-120">编辑</i>
                                             </a>
+                                            @if($v->is_system==0)
                                             <a class="btn btn-xs btn-danger" data-toggle="modal"  data-target="#confirm-delete" data-href="{{url('admin/menu/delete',['id'=>$v->id])}}">
                                                 <i class="icon-trash bigger-120">删除</i>
                                             </a>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>
