@@ -18,7 +18,7 @@ class MenuComposer
     {
         //第一步展示出菜单
         $user=Auth::user();
-        $menu=Menu::get()->toArray();
+        $menu=Menu::orderBy('sort', 'asc')->get()->toArray();
         $menu=$this->arrayToTree($menu,'id','parent_id');
         if($user->id!=1){
             //获取当前用户角色
