@@ -212,6 +212,7 @@ return [
 
         'Urlhelp'   =>App\Facades\UrlClass::class,
         'TagClass'   =>App\Facades\TagClass::class,//测试门面
+        
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
     ],
 

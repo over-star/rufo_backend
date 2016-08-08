@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use View;
-
 
 class ComposerServiceProvider extends ServiceProvider
 {

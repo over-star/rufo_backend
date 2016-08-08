@@ -316,12 +316,16 @@
                 <ul class="breadcrumb">
                     <li>
                         <i class="icon-home home-icon"></i>
-                        <a href="#">Home</a>
+                        <a href="{{$bread_crumbs[0]['url']}}">{{$bread_crumbs[0]['name']}}</a>
                     </li>
+                    @if(isset($bread_crumbs[1]['name']))
                     <li>
-                        <a href="#">Other Pages</a>
+                        <a href="{{ $bread_crumbs[1]['url'] or '#' }}">{{ $bread_crumbs[1]['name'] or '' }}</a>
                     </li>
-                    <li class="active">Blank Page</li>
+                    @endif
+                     @if(isset($bread_crumbs[2]['name']))
+                    <li class="active">{{ $bread_crumbs[2]['name'] or '' }}</li>
+                    @endif
                 </ul><!-- .breadcrumb -->
 
             </div>
@@ -352,7 +356,7 @@
                             <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
                         </select>
                     </div>
-                    <span>&nbsp; Choose Skin</span>
+                    <span>&nbsp; 选择皮肤</span>
                 </div>
 
                 <div>
@@ -378,7 +382,7 @@
                 <div>
                     <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
                     <label class="lbl" for="ace-settings-add-container">
-                        Inside
+                        内部显示
                         <b>.container</b>
                     </label>
                 </div>
@@ -431,6 +435,8 @@
 <script src="{{ URL::asset('assets/js/ace-elements.min.js')}}"></script>
 <script src="{{ URL::asset('assets/js/ace.min.js')}}"></script>
 @yield('script')
+<script>
 
+</script>
 </body>
 </html>

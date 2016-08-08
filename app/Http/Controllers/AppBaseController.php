@@ -23,4 +23,5 @@ class AppBaseController extends LaravelController
     {
         return Response::json(ResponseUtil::makeResponse($message, $result));
     }
+
 }

@@ -6,14 +6,13 @@ use $NAMESPACE_REQUEST$;
 use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
 use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
 use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
-use App\Http\Controllers\AppBaseController as InfyOmBaseController;
 use App\Http\Controllers\Controller as LaravelController;
 use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 
-class $MODEL_NAME$Controller extends InfyOmBaseController
+class $MODEL_NAME$Controller extends LaravelController
 {
     /** @var  $MODEL_NAME$Repository */
     private $$MODEL_NAME_CAMEL$Repository;
