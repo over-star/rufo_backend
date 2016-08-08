@@ -58,7 +58,8 @@
                     @else
                             <li class="{{ Urlhelp::pattern($val['active_url'],$val['active']) }}">
                                 <a href="{!!url($val['url']) !!}">
-                                    <i class="icon-file-alt"></i><span>{{$val['name']}}</span>
+                                    <i class="icon-file-alt"></i>
+                                    <span class="menu-text">{{$val['name']}}</span>
                                 </a>
                             </li>
                     @endif
