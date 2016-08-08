@@ -117,9 +117,33 @@ Route::get('/',function (){
     //return redirect('auth/login');
     TagClass::echowho();
 });
-Route::resource('tags', 'TagController');
 
-//Route::resource('posts', 'PostController');
 
-//Route::resource('articles', 'ArticleController');
+Route::get('background/articles', ['as'=> 'background.articles.index', 'uses' => 'background\ArticlesController@index']);
+Route::post('background/articles', ['as'=> 'background.articles.store', 'uses' => 'background\ArticlesController@store']);
+Route::get('background/articles/create', ['as'=> 'background.articles.create', 'uses' => 'background\ArticlesController@create']);
+Route::put('background/articles/{articles}', ['as'=> 'background.articles.update', 'uses' => 'background\ArticlesController@update']);
+Route::patch('background/articles/{articles}', ['as'=> 'background.articles.update', 'uses' => 'background\ArticlesController@update']);
+Route::delete('background/articles/{articles}', ['as'=> 'background.articles.destroy', 'uses' => 'background\ArticlesController@destroy']);
+Route::get('background/articles/{articles}', ['as'=> 'background.articles.show', 'uses' => 'background\ArticlesController@show']);
+Route::get('background/articles/{articles}/edit', ['as'=> 'background.articles.edit', 'uses' => 'background\ArticlesController@edit']);
 
+
+Route::get('background/tags', ['as'=> 'background.tags.index', 'uses' => 'Background\TagController@index']);
+Route::post('background/tags', ['as'=> 'background.tags.store', 'uses' => 'Background\TagController@store']);
+Route::get('background/tags/create', ['as'=> 'background.tags.create', 'uses' => 'Background\TagController@create']);
+Route::put('background/tags/{tags}', ['as'=> 'background.tags.update', 'uses' => 'Background\TagController@update']);
+Route::patch('background/tags/{tags}', ['as'=> 'background.tags.update', 'uses' => 'Background\TagController@update']);
+Route::delete('background/tags/{tags}', ['as'=> 'background.tags.destroy', 'uses' => 'Background\TagController@destroy']);
+Route::get('background/tags/{tags}', ['as'=> 'background.tags.show', 'uses' => 'Background\TagController@show']);
+Route::get('background/tags/{tags}/edit', ['as'=> 'background.tags.edit', 'uses' => 'Background\TagController@edit']);
+
+
+Route::get('background/posts', ['as'=> 'background.posts.index', 'uses' => 'Background\PostController@index']);
+Route::post('background/posts', ['as'=> 'background.posts.store', 'uses' => 'Background\PostController@store']);
+Route::get('background/posts/create', ['as'=> 'background.posts.create', 'uses' => 'Background\PostController@create']);
+Route::put('background/posts/{posts}', ['as'=> 'background.posts.update', 'uses' => 'Background\PostController@update']);
+Route::patch('background/posts/{posts}', ['as'=> 'background.posts.update', 'uses' => 'Background\PostController@update']);
+Route::delete('background/posts/{posts}', ['as'=> 'background.posts.destroy', 'uses' => 'Background\PostController@destroy']);
+Route::get('background/posts/{posts}', ['as'=> 'background.posts.show', 'uses' => 'Background\PostController@show']);
+Route::get('background/posts/{posts}/edit', ['as'=> 'background.posts.edit', 'uses' => 'Background\PostController@edit']);

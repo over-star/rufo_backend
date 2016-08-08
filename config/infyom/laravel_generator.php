@@ -120,11 +120,11 @@ return [
 
     'prefixes' => [
 
-        'route' => '',  // using admin will create route('admin.?.index') type routes
+        'route' => 'background',  // using admin will create route('admin.?.index') type routes
 
-        'path' => '',
+        'path' => 'background',//
 
-        'view' => '',  // using backend will create return view('backend.?.index') type the backend views directory
+        'view' => 'background',  // using backend will create return view('backend.?.index') type the backend views directory
 
         'public' => '',
     ],
@@ -138,7 +138,7 @@ return [
 
     'add_on' => [
 
-        'swagger'       => true,
+        'swagger'       => false,
 
         'tests'         => true,
 

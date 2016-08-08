@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单激活active样式:</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单激活样式:</label>
                     <div class="col-sm-9">
                         <input type="text" value="active open" id="form-field-1" value="{{$menu->active}}" name="active" placeholder="菜单激活active" class="col-xs-10 col-sm-10">
                     </div>
@@ -55,19 +55,20 @@
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否系统菜单:</label>
                     <div class="col-sm-9">
                         <input type="radio" @if($menu->is_system!=0) checked @endif name="is_system" value="1">
-                        \是
+                        是
                         <input type="radio" @if($menu->is_system==0) checked @endif id="" name="is_system" value="0">
-                        \否
+                        否
                     </div>
                 </div>
                 <div class="space-4"></div>
+                <div class="clearfix"></div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
                     <div class="col-sm-9">
                         @foreach($permissions as $k=>$v)
-
-                            <label for="" class="radio-inline">
-                                <input type="radio" id="" @if($menu->permission_id==$v->id) checked @endif name="permission_id" value="{{$v->id}}">{{$v->name}}
+                            <label class="radio-inline">
+                                <input type="radio" @if($menu->permission_id==$v->id) checked @endif
+                                name="permission_id" value="{{$v->id}}">{{$v->name}}({{$v->display_name}})
                             </label>
 
                         @endforeach

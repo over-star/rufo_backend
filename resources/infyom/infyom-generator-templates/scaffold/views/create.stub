@@ -1,0 +1,19 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="pull-left">创建 $MODEL_NAME$</h1>
+        </div>
+    </div>
+
+    @include('core-templates::common.errors')
+
+    <div class="row">
+        {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store']) !!}
+
+            @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.fields')
+
+        {!! Form::close() !!}
+    </div>
+@endsection

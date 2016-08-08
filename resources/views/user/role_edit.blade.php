@@ -35,7 +35,9 @@
                     <div class="col-sm-9">
                         @foreach($permission as $k=>$v)
                             <label class="checkbox-inline">
-                                <input type="checkbox" @foreach($haspremission as $vv) @if($vv->permission_id==$v->id)  checked @endif; @endforeach; name="join_permission[]" value="{{$v->id}}">{{$v->name}}
+                                <input type="checkbox" @foreach($haspremission as $vv) @if($vv->permission_id==$v->id)  checked @endif;
+                                       @endforeach;
+                                       name="join_permission[]" value="{{$v->id}}">{{$v->name}}({{$v->display_name}})
                             </label>
                         @endforeach
                     </div>
