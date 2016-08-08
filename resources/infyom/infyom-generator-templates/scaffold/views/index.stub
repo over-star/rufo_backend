@@ -1,7 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-        <h1 class="pull-left">$MODEL_NAME_PLURAL$</h1>
+        <div class="page-header">
+            <h1>
+                用户管理
+                <small>
+                    <i class="icon-double-angle-right"></i>
+                     $MODEL_NAME_PLURAL$
+                </small>
+            </h1>
+        </div>
         <a class="btn btn-primary pull-right" style="margin-bottom: 10px" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create') !!}">添加</a>
 
         <div class="clearfix"></div>

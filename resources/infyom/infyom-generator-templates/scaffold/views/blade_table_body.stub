@@ -1,7 +1,7 @@
 <table class="table table-striped table-bordered table-hover" id="$MODEL_NAME_PLURAL_CAMEL$-table">
     <thead>
         $FIELD_HEADERS$
-        <th colspan="3">Action</th>
+        <th colspan="3">操作</th>
     </thead>
     <tbody>
     @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $$MODEL_NAME_CAMEL$)
