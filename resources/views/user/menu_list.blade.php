@@ -111,15 +111,21 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单激活active样式:</label>
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单样式:</label>
                             <div class="col-sm-9">
-                                <input type="text" value="active open" id="form-field-1" name="active" placeholder="菜单激活active" class="col-xs-10 col-sm-10">
+                                <input type="text" value="active open" id="form-field-1" name="active" placeholder="菜单active" class="col-xs-10 col-sm-10">
                             </div>
                         </div>
                        <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单active_url:</label>
                             <div class="col-sm-9">
                                 <input type="text" id="form-field-1" name="active_url" placeholder="菜单激活active_url" class="col-xs-10 col-sm-10">
+                            </div>
+                        </div>
+                       <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单图标:</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="form-field-1" name="icon" placeholder="菜单图标" class="col-xs-10 col-sm-10">
                             </div>
                         </div>
                         <div class="form-group">
@@ -145,9 +151,9 @@
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否系统菜单:</label>
                             <div class="col-sm-9">
                                     <input type="radio" id="" name="is_system" value="1">
-                                \是
-                                    <input type="radio" id="" name="is_system" value="0">
-                                \否
+                                是
+                                    <input type="radio" id="" checked name="is_system" value="0">
+                                否
                             </div>
                         </div>
                         <div class="space-4"></div>
@@ -156,8 +162,8 @@
                            <div class="col-sm-9">
                                @foreach($permissions as $k=>$v)
 
-                                       <label for="" class="radio-inline">
-                                        <input type="radio" id="" name="permission_id" value="{{$v->id}}">{{$v->name}}
+                                       <label class="radio-inline">
+                                        <input type="radio" name="permission_id" value="{{$v->id}}">{{$v->name}}
                                        </label>
 
                                @endforeach

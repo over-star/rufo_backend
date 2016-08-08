@@ -41,7 +41,7 @@
                     @if(isset($val['children']))
                             <li class="{{ Urlhelp::pattern($val['active_url'],$val['active']) }} treeview">
                                 <a href="#" class="dropdown-toggle">
-                                    <i class="icon-file-alt"></i>
+                                    <i class="{{ $val['icon'] or 'icon-file-alt' }}"></i>
                                     <span class="menu-text">{{ $val['name'] }}</span>
                                     <b class="arrow icon-angle-down"></b>
                                 </a>
@@ -58,7 +58,7 @@
                     @else
                             <li class="{{ Urlhelp::pattern($val['active_url'],$val['active']) }}">
                                 <a href="{!!url($val['url']) !!}">
-                                    <i class="icon-file-alt"></i>
+                                    <i class="{{ $val['icon'] or 'icon-file-alt' }}"></i>
                                     <span class="menu-text">{{$val['name']}}</span>
                                 </a>
                             </li>

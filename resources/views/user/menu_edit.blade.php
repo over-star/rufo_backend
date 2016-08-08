@@ -34,6 +34,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单图标:</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="form-field-1" name="icon" value="{{$menu->icon}}" placeholder="菜单图标" class="col-xs-10 col-sm-10">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 菜单sort排序值:</label>
                     <div class="col-sm-9">
                         <input type="text" id="form-field-1" name="sort" value="{{$menu->sort}}" placeholder="菜单sort排序值" class="col-xs-10 col-sm-10">

@@ -120,11 +120,11 @@ return [
 
     'prefixes' => [
 
-        'route' => 'background',  // using admin will create route('admin.?.index') type routes
+        'route' => 'background',  //路由路径,牵连路由路径 using admin will create route('admin.?.index') type routes
 
-        'path' => 'background',//
+        'path' => 'background',//控制器路径
 
-        'view' => 'background',  // using backend will create return view('backend.?.index') type the backend views directory
+        'view' => 'background',  // 视图路径,修改这里会修改控制器view函数()using backend will create return view('backend.?.index') type the backend views directory
 
         'public' => '',
     ],
