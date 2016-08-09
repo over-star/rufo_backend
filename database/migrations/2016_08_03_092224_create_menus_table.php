@@ -18,7 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('url');
             $table->string('active');
             $table->string('active_url');
-            $table->string('icon');
+            $table->string('icon')->nullable();;
             $table->smallInteger('permission_id');
             $table->smallInteger('sort')->default(0);
             $table->tinyInteger('is_system')->default(0);
