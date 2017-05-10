@@ -60,10 +60,18 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否系统菜单:</label>
                     <div class="col-sm-9">
-                        <input type="radio" @if($menu->is_system!=0) checked @endif name="is_system" value="1">
-                        是
-                        <input type="radio" @if($menu->is_system==0) checked @endif id="" name="is_system" value="0">
-                        否
+                        <div class="radio">
+                            <label>
+                                <input type="radio" @if($menu->is_system!=0) checked @endif name="is_system" value="1">
+                                是
+                            </label>
+                        </div>
+                       <div class="radio">
+                            <label>
+                                <input type="radio" @if($menu->is_system==0) checked @endif id="" name="is_system" value="0">
+                                否
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="space-4"></div>
@@ -71,13 +79,11 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
                     <div class="col-sm-9">
-                        @foreach($permissions as $k=>$v)
-                            <label class="radio-inline">
-                                <input type="radio" @if($menu->permission_id==$v->id) checked @endif
-                                name="permission_id" value="{{$v->id}}">{{$v->name}}({{$v->display_name}})
-                            </label>
-
-                        @endforeach
+                        <select class="select2" name="permission_id" style="width: 85%">
+                            @foreach($permissions as $k=>$v)
+                                <option @if($menu->permission_id==$v->id) selected @endif value="{{$v->id}}">{{$v->display_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">

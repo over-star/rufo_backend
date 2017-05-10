@@ -43,7 +43,6 @@ class Authenticate
                 return redirect()->guest('auth/login');
             }
         }
-
         //判断有没有view-backend权限
         if($this->auth->user()->id!=1){
             $id=Auth::user();

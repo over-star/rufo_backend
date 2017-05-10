@@ -33,20 +33,20 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
                     <div class="col-sm-9">
-                        @foreach($permission as $k=>$v)
-                            <label class="checkbox-inline">
-                                <input type="checkbox" @foreach($haspremission as $vv) @if($vv->permission_id==$v->id)  checked @endif;
-                                       @endforeach;
-                                       name="join_permission[]" value="{{$v->id}}">{{$v->name}}({{$v->display_name}})
-                            </label>
-                        @endforeach
+                        <select class="select2 form-control js-status" style="width: 85%" name="join_permission[]" multiple="multiple">
+                            @foreach($permission as $k=>$v)
+                                <option
+                                        @foreach($haspremission as $vv)
+                                        @if($vv->permission_id==$v->id)  selected @endif
+                                        @endforeach value="{{$v->id}}">{{$v->display_name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="submit" class="btn btn-primary">保存</button>
                 </div>
-
             </div>
         </form>
     </div>

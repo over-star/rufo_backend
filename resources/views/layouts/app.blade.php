@@ -22,7 +22,7 @@
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="{{ URL::asset('assets/css/ace-ie.min.css')}}" />
     <![endif]-->
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <!-- ace settings handler -->
     <script src="{{ URL::asset('assets/js/ace-extra.min.js')}}"></script>
     <!--[if lt IE 9]>
@@ -417,7 +417,6 @@
 <script src="{{ URL::asset('assets/js/jquery-2.0.3.min.js')}}"></script>
 <!-- <![endif]-->
 <!--[if IE]>
-<script src="{{ URL::asset('assets/js/jquery-1.10.2.min.js')}}"></script>
 <![endif]-->
 
 <script type="text/javascript">
@@ -428,6 +427,7 @@
 </script>
 <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{ URL::asset('assets/js/typeahead-bs2.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <!-- page specific plugin scripts -->
 
@@ -435,8 +435,5 @@
 <script src="{{ URL::asset('assets/js/ace-elements.min.js')}}"></script>
 <script src="{{ URL::asset('assets/js/ace.min.js')}}"></script>
 @yield('script')
-<script>
-
-</script>
 </body>
 </html>

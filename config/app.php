@@ -147,15 +147,10 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,//excel
 
         Collective\Html\HtmlServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
-        Prettus\Repository\Providers\RepositoryServiceProvider::class,
-        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-        \InfyOm\CoreTemplates\CoreTemplatesServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-        Orangehill\Iseed\IseedServiceProvider::class ,
     ],
 
     /*

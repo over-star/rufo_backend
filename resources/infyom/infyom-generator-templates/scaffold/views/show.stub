@@ -1,9 +1,0 @@
-@extends('layouts.app')
-
-@section('content')
-    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show_fields')
-
-    <div class="form-group">
-           <a href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') !!}" class="btn btn-default">返回</a>
-    </div>
-@endsection

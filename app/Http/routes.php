@@ -1,76 +1,8 @@
 <?php
 
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-////迭代器执行的时间
-//    function gen_str($n){
-//        $start = microtime(true);
-//        $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
-//        $str=null;
-//        $max = strlen($strPol)-1;
-//        function gen_t($n,$strPol,$max){
-//            for($i = 1; $i < $n; $i++)
-//                yield $strPol[rand(0,$max)];
-//        }
-//        foreach(gen_t($n,$strPol,$max) as $out)
-//            $str=$str.$out;
-//
-//        echo $str;
-//        $elapsed = microtime(true) - $start;
-//        echo '  执行时间:'.$elapsed;
-//        echo "memory (byte): ", memory_get_peak_usage(true), "\n";
-//    }
-////普通函数
-//    function getRandChar($length){
-//        $start = microtime(true);
-//        $str = null;
-//        $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
-//        $max = strlen($strPol)-1;
-//
-//        for($i=0;$i<$length;$i++){
-//            $str.=$strPol[rand(0,$max)];//rand($min,$max)生成介于min和max两个数之间的一个随机整数
-//        }
-//        echo $str;
-//        $elapsed = microtime(true) - $start;
-//        echo '  2执行时间:'.$elapsed;
-//        echo "memory (byte): ", memory_get_peak_usage(true), "\n";
-//    }
-//
-//    gen_str(30000);//2359296
-//    getRandChar(30000);
 
-Route::get('/a', function () {
-     Log::emergency('测试日志'); 
-});
-Route::get('excel/export','ExcelController@export');
-Route::get('excel/import','ExcelController@import');
-
-/*
-|--------------------------------------------------------------------------
-| API routes
-|--------------------------------------------------------------------------
-*/
-
-Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
-    Route::group(['prefix' => 'v1'], function () {
-        require config('infyom.laravel_generator.path.api_routes');
-    });
-});
-/*
-|--------------------------------------------------------------------------
-| Admin routes
-|--------------------------------------------------------------------------
-*/
 
 Route::resource('posts', 'PostController');
 // 认证路由...

@@ -116,24 +116,24 @@
                             </div>
                         </div>
                         <div class="space-4"></div>
-                       <div class="form-group">
-                           <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
-                           <div class="col-sm-9">
-                               @foreach($permissions as $k=>$v)
-                               <label class="checkbox-inline">
-                                   <input type="checkbox" id="" name="join_permission[]" value="{{$v->id}}">{{$v->name}}
-                               </label>
-                                @endforeach
-                           </div>
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
+                                <div class="col-sm-9">
+                                    <select class="select2 form-control js-status" style="width: 85%" name="join_permission[]" multiple="multiple">
+                                       @foreach($permissions as $k=>$v)
+                                           <option  value="{{$v->id}}">{{$v->display_name}}</option>
+                                       @endforeach
+                                   </select>
+                                 </div>
+                    </div>
 
+                </div>
 
-                       </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="submit" class="btn btn-primary">保存</button>
                 </div>
 
-                </div>
                 </form>
             </div>
         </div>
@@ -150,6 +150,8 @@
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
         });
+        $('.select2').select2({
+            placeholder: "请选择权限"
+        });
     </script>
-
 @endsection

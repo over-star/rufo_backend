@@ -150,23 +150,29 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label no-padding-right" for="form-field-1">是否系统菜单:</label>
                             <div class="col-sm-9">
-                                    <input type="radio" id="" name="is_system" value="1">
-                                是
-                                    <input type="radio" id="" checked name="is_system" value="0">
-                                否
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio"  name="is_system" value="1">
+                                        是
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" checked id="" name="is_system" value="0">
+                                        否
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="space-4"></div>
                          <div class="form-group">
                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1">关联权限:</label>
                            <div class="col-sm-9">
+                               <select style="width: 85%" class="select2" name="permission_id">
                                @foreach($permissions as $k=>$v)
-
-                                       <label class="radio-inline">
-                                        <input type="radio" name="permission_id" value="{{$v->id}}">{{$v->name}}
-                                       </label>
-
+                                       <option value="{{$v->id}}">{{$v->display_name}}</option>
                                @endforeach
+                               </select>
                            </div>
                        </div>
                 <div class="modal-footer">
@@ -191,6 +197,6 @@
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
         });
+        $('.select2').select2();
     </script>
-
 @endsection

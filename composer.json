@@ -11,8 +11,7 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "rap2hpoutre/laravel-log-viewer": "^0.7.0",
         "arcanedev/log-viewer": "~3.0",
-        "zizaco/entrust": "5.2.x-dev",
-        "orangehill/iseed": "dev-master"
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -20,11 +19,7 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "laracasts/generators": "^1.1",
-        "infyomlabs/laravel-generator": "dev-master",
-        "infyomlabs/core-templates": "dev-master",
-        "laravelcollective/html": "5.1.*",
-      "infyomlabs/swagger-generator": "dev-master",
-      "jlapp/swaggervel": "dev-master"
+        "laravelcollective/html": "5.1.*"
     },
     "autoload": {
         "classmap": [
