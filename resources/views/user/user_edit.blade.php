@@ -4,8 +4,8 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
+            <form action="{{route('admin.user.update')}}" method="post" class="form-horizontal">
             <div class="modal-body">
-                <form action="{{route('admin.user.update')}}" method="post" class="form-horizontal">
                     <div class="modal-body">
                         {!! csrf_field() !!}
                         <input type="hidden" name="id" value="{{$user->id}}">
@@ -35,14 +35,13 @@
                         </div>
                         <div class="space-4"></div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="submit" class="btn btn-primary">保存</button>
-                    </div>
-                </form>
 
             </div>
-
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">保存</button>
+            </div>
+            </form>
         </div>
     </div>
 

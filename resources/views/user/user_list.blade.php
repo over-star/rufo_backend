@@ -104,8 +104,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
+                <form action="{{route('admin.user')}}" method="post" class="form-horizontal">
                 <div class="modal-body">
-                    <form action="{{route('admin.user')}}" method="post" class="form-horizontal">
                         <div class="modal-body">
                             {!! csrf_field() !!}
                             <div class="form-group">
@@ -137,21 +137,17 @@
                             </div>
                             <div class="space-4"></div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="submit" class="btn btn-primary">保存</button>
-                        </div>
-                    </form>
-
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                </div>
+                </form>
             </div>
         </div>
     </div>
-    <!-- Modal-End -->
     <!-- Modal edit远程数据-->
     <div class="modal fade" tabindex="-1" role="dialog" id="mmmm" aria-labelledby="myModalLabel">
-
     </div>
     <!-- Modal 远程数据-->
 @endsection
@@ -160,6 +156,5 @@
         $("#mmmm").on("hidden.bs.modal", function() {
             $(this).removeData("bs.modal");
         });
-    </script>
-
+    </script>s
 @endsection

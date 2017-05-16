@@ -1,9 +1,0 @@
-@extends('layouts.app')
-
-@section('content')
-    @include('background.tags.show_fields')
-
-    <div class="form-group">
-           <a href="{!! route('background.tags.index') !!}" class="btn btn-default">返回</a>
-    </div>
-@endsection

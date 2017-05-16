@@ -45,11 +45,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth','middleware' =>'auth'],
 
 });
 
-Route::get('/',function (){
-    //return redirect('auth/login');
-    TagClass::echowho();
-});
-
 
 Route::get('background/articles', ['as'=> 'background.articles.index', 'uses' => 'background\ArticlesController@index']);
 Route::post('background/articles', ['as'=> 'background.articles.store', 'uses' => 'background\ArticlesController@store']);

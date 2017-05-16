@@ -18,7 +18,7 @@ class UserController extends Controller
     //用户列表
     public function index()
     {
-        return view('user.list')->withUsers(User::paginate(15));
+        return view('user.user_list')->withUsers(User::paginate(15));
     }
     //添加用户
     public function add_user(Request $request){
